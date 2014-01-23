@@ -26,6 +26,6 @@ JRequest::setVar('view', 'configuration');
 // Include dependancies
 jimport('joomla.application.component.controller');
 
-$controller	= JController::getInstance('xmlrpc');
+$controller	= JControllerLegacy::getInstance('xmlrpc');
 $controller->execute(JRequest::getCmd('task'));
 $controller->redirect();

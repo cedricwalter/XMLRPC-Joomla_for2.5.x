@@ -17,7 +17,7 @@
 
 defined('_JEXEC') or die;
 
-class XMLRPCController extends JController
+class XMLRPCController extends JControllerLegacy
 {
 
 }

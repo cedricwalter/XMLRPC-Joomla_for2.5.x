@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
 
 jimport('joomla.application.component.view');
 
-class XMLRPCViewConfiguration extends JView
+class XMLRPCViewConfiguration extends JViewLegacy
 {
 	public function display($tpl = null)
 	{

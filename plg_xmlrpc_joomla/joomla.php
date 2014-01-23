@@ -1264,13 +1264,16 @@ class plgXMLRPCJoomla extends JPlugin
 
 	protected function authenticateUser($username, $password)
 	{
-		jimport('joomla.user.authentication');
+
+        //\JApplication::login
+
+        jimport('joomla.user.authentication');
 		$auth = JAuthentication::getInstance();
 		$credentials['username'] = $username;
 		$credentials['password'] = $password;
 		$authuser = $auth->authenticate($credentials, null);
 
-		if ($authuser->status == JAUTHENTICATE_STATUS_FAILURE || empty($authuser->username) || empty($authuser->password) || empty($authuser->email))
+		if ($authuser->status == JAuthentication::STATUS_FAILURE || empty($authuser->username) || empty($authuser->password) || empty($authuser->email))
 		{
 			return false;
 		}
